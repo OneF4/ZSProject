@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.work.zsproject.MainActivity">
+    android:background="#EAF7FE"
+    tools:context="com.example.work.zsproject.view.activity.MainActivity">
+
+    <ImageView
+        android:layout_width="506pt"
+        android:layout_height="205pt"
+        android:layout_marginTop="204pt"
+        android:layout_marginLeft="107pt"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/title"
+        android:src="@mipmap/title"/>
+    <ImageView
+        android:layout_width="690pt"
+        android:layout_height="445pt"
+        android:layout_below="@id/title"
+        android:layout_marginTop="150pt"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/neirong"
+        />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="20pt"
+        android:textColor="#507def"
+        android:text="Copyrignt © 2018 运途云"
+        android:layout_marginBottom="70pt"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
