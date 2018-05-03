@@ -42,56 +42,54 @@
         android:layout_marginRight="40pt"
         android:layout_below="@id/text1">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="80pt"
-            android:layout_margin="30pt"
             android:background="@drawable/mobileshape"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20pt"
-                android:layout_marginRight="5pt"
-                android:src="@mipmap/account"/>
+            android:layout_margin="30pt">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/editsharp"
+                android:background="@drawable/edit_selector"
+                android:paddingLeft="80pt"
                 android:hint="请输入手机号" />
 
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20pt"
+                android:src="@mipmap/account" />
 
-        <LinearLayout
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="80pt"
             android:layout_marginLeft="30pt"
             android:layout_marginRight="30pt"
-            android:background="@drawable/mobileshape"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20pt"
-                android:layout_marginRight="5pt"
-                android:src="@mipmap/pass"/>
+            android:background="@drawable/mobileshape">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/editsharp"
+                android:background="@drawable/edit_selector"
                 android:hint="请输入密码"
+                android:paddingLeft="80pt"
                 android:inputType="textPassword"
                 android:maxLength="20" />
 
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20pt"
+                android:src="@mipmap/pass" />
+
+        </FrameLayout>
 
         <TextView
             android:layout_width="match_parent"
