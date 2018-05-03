@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    tools:context="com.example.work.zsproject.view.activity.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="580pt"
+        android:background="@mipmap/dlbj"/>
+
+    <ImageView
+        android:id="@+id/imgtx"
+        android:layout_width="120pt"
+        android:layout_height="120pt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180pt"
+        android:src="@mipmap/timg"
+        android:background="@drawable/shape"/>
+
+    <TextView
+        android:layout_margin="30pt"
+        android:layout_below="@id/imgtx"
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="运途云舟山安检"
+        android:layout_centerHorizontal="true"
+        android:textSize="40pt"
+        android:textStyle="bold"
+        android:textColor="#ffffff"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="370pt"
+        android:orientation="vertical"
+        android:background="@drawable/shape"
+        android:layout_marginLeft="40pt"
+        android:layout_marginRight="40pt"
+        android:layout_below="@id/text1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80pt"
+            android:layout_margin="30pt"
+            android:background="@drawable/mobileshape"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20pt"
+                android:layout_marginRight="5pt"
+                android:src="@mipmap/account"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/editsharp"
+                android:hint="请输入手机号" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80pt"
+            android:layout_marginLeft="30pt"
+            android:layout_marginRight="30pt"
+            android:background="@drawable/mobileshape"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20pt"
+                android:layout_marginRight="5pt"
+                android:src="@mipmap/pass"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/editsharp"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:maxLength="20" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="90pt"
+            android:layout_marginTop="60pt"
+            android:background="@drawable/textshape"
+            android:text="登录"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="36pt"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
