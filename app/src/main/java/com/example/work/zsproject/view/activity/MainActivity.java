@@ -13,12 +13,14 @@ import java.util.TimerTask;
  * */
 public class MainActivity extends BaseActivity {
 
+    private Timer timer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //创建timer对象
-        Timer timer = new Timer();
+        timer = new Timer();
         //通过timer进行2秒跳转
         timer.schedule(new TimerTask() {
             @Override
@@ -29,5 +31,11 @@ public class MainActivity extends BaseActivity {
                 finish();
             }
         },2000);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        timer.cancel();
     }
 }

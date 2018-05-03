@@ -51,11 +51,13 @@
             android:layout_margin="30pt">
 
             <EditText
+                android:id="@+id/login_edit_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/edit_selector"
                 android:paddingLeft="80pt"
                 android:phoneNumber="true"
+                android:maxLength="11"
                 android:hint="请输入手机号" />
 
             <ImageView
@@ -75,6 +77,7 @@
             android:background="@drawable/mobileshape">
 
             <EditText
+                android:id="@+id/login_edit_pass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/edit_selector"
@@ -93,11 +96,13 @@
         </FrameLayout>
 
         <TextView
+            android:id="@+id/login_text_view"
             android:layout_width="match_parent"
             android:layout_height="90pt"
             android:layout_marginTop="60pt"
             android:background="@drawable/textshape"
             android:text="登录"
+            android:enabled="false"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="36pt"
