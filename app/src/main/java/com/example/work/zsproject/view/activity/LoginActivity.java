@@ -50,7 +50,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             @Override
             public void run() {
                 //判断输入框是否为空
-                if (!"".equals(mLoginEditMobile.getText().toString().trim()) && !"".equals(mLoginEditPass.getText().toString().trim())) {
+                if (!"".equals(mLoginEditMobile.getText().toString().trim()) && !"".equals(mLoginEditPass.getText().toString().trim()) && mLoginEditPass.getText().toString().trim().length() >= 6) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
