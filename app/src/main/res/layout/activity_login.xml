@@ -55,6 +55,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/edit_selector"
                 android:paddingLeft="80pt"
+                android:phoneNumber="true"
                 android:hint="请输入手机号" />
 
             <ImageView
