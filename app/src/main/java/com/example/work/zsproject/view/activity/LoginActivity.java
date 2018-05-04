@@ -1,6 +1,7 @@
 package com.example.work.zsproject.view.activity;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -90,6 +91,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case R.id.login_text_view:
                 Toast.makeText(this, "-.-", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, BodyActivity.class);
+                startActivity(intent);
+
                 break;
         }
     }
