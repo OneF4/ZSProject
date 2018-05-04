@@ -31,6 +31,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
      */
     private TextView mLoginTextView;
     private Timer timer;
+    private String expression;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mLoginEditPass = (EditText) findViewById(R.id.login_edit_pass);
         mLoginTextView = (TextView) findViewById(R.id.login_text_view);
         mLoginTextView.setOnClickListener(this);
+        //判断手机号的正则表达式
+        expression = "^1[3|5|7|8|9][0-9]\\d{8}$";
+
         //创建timer对象
         timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -89,7 +93,15 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             default:
                 break;
             case R.id.login_text_view:
-                Toast.makeText(this, "-.-", Toast.LENGTH_SHORT).show();
+                //判断手机号是否为11位
+                if (mLoginEditMobile.getText().toString().trim().length() != 11) {
+                    Toast.makeText(LoginActivity.this,"手机号必须为11位",Toast.LENGTH_LONG).show();
+                }else if (!mLoginEditMobile.getText().toString().trim().matches(expression)){//判断输入的格式是否正确，是否为手机号
+                    Toast.makeText(LoginActivity.this,"手机号格式不正确",Toast.LENGTH_LONG).show();
+                }else {
+                    //跳转到登录成功页面
+                    Toast.makeText(LoginActivity.this,"成功",Toast.LENGTH_LONG).show();
+                }
                 break;
         }
     }
