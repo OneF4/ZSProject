@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.example.work.zsproject.R;
 
 /**
- * Created by work on 2018/5/4.
+ * 通过安检页面
  */
 
 public class PassFragments extends Fragment {
