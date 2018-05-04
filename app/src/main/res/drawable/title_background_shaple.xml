@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+    <!-- shape 定义形状为rectangle -->
+
+    <!-- corners 设置四个圆角 -->
+    <corners android:radius="4pt" />
+    <!-- 设置背景颜色 -->
+    <solid android:color="#7099FB"/>
+
+
+</shape>
