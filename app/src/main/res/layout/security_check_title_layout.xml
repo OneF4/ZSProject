@@ -15,6 +15,7 @@
             android:src="@mipmap/search" />
 
         <TextView
+            android:id="@+id/title_vehicle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="车辆（125）"
