@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.LinearLayout;
 /**
  * 自定义view画圆
@@ -17,6 +18,7 @@ public class CouponView extends LinearLayout {
     private int circleNum;      //圆数量
     private float remain;
     private float width;        //视图宽
+    private float height;        //视图高
 
 
     public CouponView(Context context) {
@@ -35,6 +37,7 @@ public class CouponView extends LinearLayout {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         width = w;
+        height = h;
         if (remain==0){
             //计算不整除的剩余部分
             remain = (int)(h-gap)%(2*radius+gap);
@@ -55,13 +58,10 @@ public class CouponView extends LinearLayout {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        /*//循环在左右两个边上画出凹凸效果
-        for (int i=0;i<circleNum;i++){
-            float y = gap+radius+remain/2+((gap+radius*2)*i);//计算出y轴坐标
-            canvas.drawCircle(0,y,radius,mPaint);//在左边边画圆
-            canvas.drawCircle(width,y,radius,mPaint);//在右边画圆
-        }*/
-        float y = 143;//计算出y轴坐标
+        //手机屏幕比值
+        float  specificValue = 518 / height;
+        //得到y轴坐标比值
+        float y = 143 / specificValue;//计算出y轴坐标
         canvas.drawCircle(0,y,radius,mPaint);//在左边边画圆
         canvas.drawCircle(width,y,radius,mPaint);//在右边画圆
     }

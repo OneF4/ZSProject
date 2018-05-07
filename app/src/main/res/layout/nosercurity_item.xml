@@ -8,7 +8,7 @@
     android:orientation="vertical">
     <com.example.work.zsproject.view.custom.CouponView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="360pt"
         android:orientation="vertical"
         android:paddingLeft="20pt"
         android:paddingRight="20pt"
@@ -41,6 +41,8 @@
             android:layout_width="match_parent"
             android:layout_height="2pt"
             android:background="@drawable/view_shape"
+            android:layout_marginLeft="8pt"
+            android:layout_marginRight="8pt"
             android:layout_marginBottom="25pt"
             android:layerType="software" />
         <RelativeLayout
