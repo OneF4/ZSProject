@@ -32,7 +32,7 @@
             android:background="@drawable/title_background_shaple"
             android:layout_alignParentRight="true"
             android:layout_margin="20pt"
-            android:paddingRight="20pt">
+            android:paddingRight="10pt">
             <LinearLayout
                 android:id="@+id/title_linear_layout"
                 android:layout_width="wrap_content"

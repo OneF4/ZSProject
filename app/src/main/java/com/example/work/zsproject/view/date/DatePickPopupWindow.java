@@ -1,7 +1,10 @@
 package com.example.work.zsproject.view.date;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,6 +12,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
@@ -16,6 +21,7 @@ import com.example.work.zsproject.R;
 import com.flyco.tablayout.SegmentTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 
+import java.lang.reflect.Field;
 import java.util.Calendar;
 
 /**
@@ -55,6 +61,9 @@ public class DatePickPopupWindow extends PopupWindow implements OnClickListener,
 
 		datePicker  = (DatePicker) rootView.findViewById(R.id.datePicker);
 		datePicker2 = (DatePicker) rootView.findViewById(R.id.datePicker2);
+
+		setDatePickerDividerColor(datePicker);
+		setDatePickerDividerColor(datePicker2);
 		// Init DatePicker
 		int year;
 		int month;
@@ -148,5 +157,40 @@ public class DatePickPopupWindow extends PopupWindow implements OnClickListener,
 	public void setDateSelectListener(
 			OnDateSelectListener onDateSelectListener) {
 		this.dateSelectListener = onDateSelectListener;
+	}
+
+	/**
+	 * 设置时间选择器的分割线颜色
+	 *
+	 * @param datePicker
+	 */
+	private void setDatePickerDividerColor(DatePicker datePicker) {
+		// Divider changing:
+
+		// 获取 mSpinners
+		LinearLayout llFirst = (LinearLayout) datePicker.getChildAt(0);
+
+		// 获取 NumberPicker
+		LinearLayout mSpinners = (LinearLayout) llFirst.getChildAt(0);
+		for (int i = 0; i < mSpinners.getChildCount(); i++) {
+			NumberPicker picker = (NumberPicker) mSpinners.getChildAt(i);
+
+			Field[] pickerFields = NumberPicker.class.getDeclaredFields();
+			for (Field pf : pickerFields) {
+				if (pf.getName().equals("mSelectionDivider")) {
+					pf.setAccessible(true);
+					try {
+						pf.set(picker, new ColorDrawable(Color.parseColor("#e1e1e1")));//设置分割线颜色
+					} catch (IllegalArgumentException e) {
+						e.printStackTrace();
+					} catch (Resources.NotFoundException e) {
+						e.printStackTrace();
+					} catch (IllegalAccessException e) {
+						e.printStackTrace();
+					}
+					break;
+				}
+			}
+		}
 	}
 }
