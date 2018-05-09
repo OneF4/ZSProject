@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/title_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20pt"
@@ -25,6 +26,7 @@
             android:layout_centerInParent="true"/>
 
         <RelativeLayout
+            android:id="@+id/title_relative_Layout"
             android:layout_width="200pt"
             android:layout_height="60pt"
             android:background="@drawable/title_background_shaple"
@@ -39,17 +41,17 @@
                 android:layout_marginLeft="10pt"
                 android:gravity="center">
                 <TextView
+                    android:id="@+id/title_date_begin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20pt"
-                    android:textColor="#ffffff"
-                    android:text="2017-1-25"/>
+                    android:textColor="#ffffff" />
                 <TextView
+                    android:id="@+id/title_date_finish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20pt"
-                    android:textColor="#ffffff"
-                    android:text="2017-2-25"/>
+                    android:textColor="#ffffff" />
             </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"

@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!--按钮底色,描边色-->
+    <color name="button_back">#28385a</color>
+    <!--白色-->
+    <color name="white">#FFFFFF</color>
 </resources>
