@@ -1,6 +1,6 @@
 package com.example.work.zsproject.view.fragments;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.work.zsproject.R;
+import com.example.work.zsproject.view.activity.SearchActivity;
 import com.example.work.zsproject.view.adapter.NosecurityAdapter;
 import com.example.work.zsproject.view.date.DatePickPopupWindow;
 import com.example.work.zsproject.view.date.DateUtils;
@@ -98,6 +99,9 @@ public class NosecurityFragment extends Fragment implements View.OnClickListener
             default:
                 break;
             case R.id.title_search:
+                //跳转到搜索页面
+                Intent intent = new Intent(getActivity(),SearchActivity.class);
+                startActivity(intent);
                 break;
             case R.id.title_relative_Layout:
                 showDatePop();

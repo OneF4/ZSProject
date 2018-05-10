@@ -104,15 +104,32 @@
             android:layout_gravity="center"
             android:layout_marginRight="20pt"
             android:src="@mipmap/on_line_updating"/>
-        <TextView
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="在线更新"
             android:layout_gravity="center"
-            android:textSize="32pt"
-            android:textColor="#3c3c50"
-            />
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/on_line_updating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2pt"
+                android:textSize="32pt"
+                android:text="在线更新"
+                android:layout_gravity="center"
+                android:textColor="#3c3c50" />
+            <ImageView
+                android:id="@+id/on_line_updating_red"
+                android:layout_width="9pt"
+                android:layout_height="9pt"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="3pt"
+                android:layout_marginTop="5pt"
+                android:layout_toRightOf="@+id/on_line_updating"
+                android:src="@mipmap/red"
+                android:visibility="visible" />
+        </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
