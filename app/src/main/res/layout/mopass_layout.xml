@@ -6,4 +6,6 @@
     android:background="#dd5"
     android:orientation="vertical">
     <include layout="@layout/security_check_title_layout" />
+
+
 </LinearLayout>
