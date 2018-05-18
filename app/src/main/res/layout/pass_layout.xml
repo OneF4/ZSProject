@@ -3,7 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/parentView"
-    android:background="#f4f"
+    android:background="#f5f5f5"
     android:orientation="vertical">
+
     <include layout="@layout/security_check_title_layout" />
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/pass_xrecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

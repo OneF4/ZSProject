@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.work.zsproject.R;
 import com.example.work.zsproject.view.activity.SearchActivity;
@@ -29,40 +30,29 @@ import java.util.List;
  */
 
 public class NosecurityFragment extends Fragment implements View.OnClickListener {
-    private XRecyclerView mNosecurityXrecycleView;
-    private NosecurityAdapter nosecurityAdapter;
-    private List<String> list;
-    /**
-     * 车辆（125）
-     */
     private TextView mTitleVehicle;
     private ImageView mTitleSearch;
-    /**
-     * 2017-1-25
-     */
     private TextView mTitleDateBegin;
-    /**
-     * 2017-2-25
-     */
     private TextView mTitleDateFinish;
     private RelativeLayout mTitleRelativeLayout;
     private View parentView;
     private DatePickPopupWindow datePickPopupWindow;
+    private XRecyclerView mNosecurityXrecycleView;
+    private NosecurityAdapter nosecurityAdapter;
+    private List<String> list;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.nosercurity_layout, container, false);
-
         initView(view);
+        getData();
         return view;
 
     }
 
     private void initView(View view) {
         parentView = (LinearLayout) view.findViewById(R.id.parentView);
-        mNosecurityXrecycleView = (XRecyclerView) view.findViewById(R.id.nosecurity_xrecycleView);
         mTitleVehicle = (TextView) view.findViewById(R.id.title_vehicle);
         mTitleSearch = (ImageView) view.findViewById(R.id.title_search);
         mTitleSearch.setOnClickListener(this);
@@ -70,18 +60,21 @@ public class NosecurityFragment extends Fragment implements View.OnClickListener
         mTitleDateFinish = (TextView) view.findViewById(R.id.title_date_finish);
         mTitleRelativeLayout = (RelativeLayout) view.findViewById(R.id.title_relative_Layout);
         mTitleRelativeLayout.setOnClickListener(this);
+        mNosecurityXrecycleView = (XRecyclerView) view.findViewById(R.id.nosecurity_xrecycleView);
+
+        nosecurityAdapter = new NosecurityAdapter(getContext());
+        list = new ArrayList<>();
+    }
+
+    private void getData() {
         //获取到当前日期
         String date = DateUtils.getTodayDate();
         //赋初始值
         mTitleDateBegin.setText(date);
         mTitleDateFinish.setText(date);
-
-        list = new ArrayList<>();
-
-        nosecurityAdapter = new NosecurityAdapter(getContext());
-
+        //设置布局
         mNosecurityXrecycleView.setLayoutManager(new LinearLayoutManager(getContext()));
-
+        //设置适配器
         mNosecurityXrecycleView.setAdapter(nosecurityAdapter);
 
         for (int i = 0; i < 10; i++) {
@@ -91,7 +84,26 @@ public class NosecurityFragment extends Fragment implements View.OnClickListener
         nosecurityAdapter.setList(list);
 
         mTitleVehicle.setText("车辆（" + list.size() + "）");
+        //XRecyclerView的上下拉监听方法
+        mNosecurityXrecycleView.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            //下拉刷新
+            public void onRefresh() {
+                Toast.makeText(getContext(),"正在完善此功能...",Toast.LENGTH_LONG).show();
+                mNosecurityXrecycleView.refreshComplete();
+            }
+
+            @Override
+            //上拉加载
+            public void onLoadMore() {
+                Toast.makeText(getContext(),"加载更多，请稍后...",Toast.LENGTH_LONG).show();
+                mNosecurityXrecycleView.refreshComplete();
+            }
+        });
     }
+
+
+
 
     @Override
     public void onClick(View v) {
